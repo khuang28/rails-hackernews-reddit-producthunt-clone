@@ -1,10 +1,8 @@
 {
-  "name": "Rails Clone Reddit",
-  "description": "Ruby on Rails application that mimics social news link sharing websites like HackerNews, ProductHunt, and Reddit.",
-  "repository": "https://github.com/blairanderson/rails-hackernews-reddit-producthunt-clone",
+  "name": "GrumbleBee",
+  "description": "Productive complaining",
   "logo": "https://cdn.rawgit.com/blairanderson/rails-hackernews-reddit-producthunt-clone/master/public/rrhnclone.png",
-  "keywords": ["rails", "ruby-on-rails", "hackernews", "producthunt", "reddit"],
-  "website": "http://www.blairanderson.co/rails-hackernews-reddit-producthunt-clone/",
+  "keywords": ["rails", "ruby-on-rails", "complain", "cmu", "grumblebee", "grumble", "bee"],
   "env": {
     "GOOGLE_ANALYTICS": "UA-12345432-2",
     "SITE_TITLE": "RRHNClone.",

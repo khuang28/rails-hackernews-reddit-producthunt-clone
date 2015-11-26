@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-li.item {
+tbody.item {
   margin-top: 10px;
 
   small {
@@ -17,4 +17,29 @@ li.item {
       background-color: #000000;
     }
   }
+  
+  td{
+    text-align: left;
+    /*font-size: 12px;*/
+  }
+
+  ul{
+    list-style-type: none;
+    margin: 0;
+      padding: 0;
+  }
+
+  li{
+    display: inline-block;
+  }
+
+  p{
+    display: inline-block;
+  }
+
+  .itemTitle{
+    padding: 100px;
+  }
 }
+
+
