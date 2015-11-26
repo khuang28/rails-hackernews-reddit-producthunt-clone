@@ -1,4 +1,4 @@
-ruby '2.1.5'
+# ruby '2.1.5'
 source 'https://rubygems.org'
 
 gem 'bootstrap-sass'
@@ -30,7 +30,7 @@ group :development, :test do
 
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
+  gem 'spring', '1.4.4' 
 
   gem 'factory_girl_rails'
   gem 'faker'
