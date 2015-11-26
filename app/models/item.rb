@@ -1,5 +1,6 @@
 class Item < ActiveRecord::Base
   belongs_to :user
+  belongs_to :category
   has_many :votes, as: :votable
   has_many :comments, class_name: "ItemComment"
 

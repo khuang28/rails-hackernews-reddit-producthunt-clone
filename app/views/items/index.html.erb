@@ -2,6 +2,5 @@
   <%= render 'components/login_register' %>
 <% end %>
 
-<ul class="media-list">
-  <%= render @items %>
-</ul>
+<%= render partial: 'item',locals: { items: @items} %>
+
