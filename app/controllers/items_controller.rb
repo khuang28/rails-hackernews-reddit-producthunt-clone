@@ -50,13 +50,13 @@ class ItemsController < ApplicationController
   def upvote
     @item = Item.find(params[:id])
     @item.upvote_by current_user
-    redirect_to items_path
+    redirect_to :back
   end
 
   def downvote
     @item = Item.find(params[:id])
     @item.downvote_by current_user
-    redirect_to items_path
+    redirect_to :back
   end
 
   private
