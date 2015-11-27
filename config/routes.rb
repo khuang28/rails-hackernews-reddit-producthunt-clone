@@ -6,8 +6,10 @@ Rails.application.routes.draw do
     resources :item_comments
     member do
       post :toggle
-      post :vote, to: 'user_item_votes#create'
-      delete :vote, to: 'user_item_votes#destroy'
+      put "like", to: "items#upvote"
+      put "dislike", to: "items#downvote"
+      # post :vote, to: 'user_item_votes#create'
+      # delete :vote, to: 'user_item_votes#destroy'
     end
   end
 

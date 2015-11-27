@@ -7,9 +7,9 @@ class ItemsController < ApplicationController
     order = params[:newest] ? {created_at: :desc} : {rank: :desc}
 
     @items = Item.order(order).includes(:user)
-    @votes = @items.includes(:votes).each_with_object({}) do |item, object|
-      object[item.id] = item.votes.map(&:user_id)
-    end
+    # @votes = @items.includes(:votes).each_with_object({}) do |item, object|
+      # object[item.id] = item.votes.map(&:user_id)
+    # end
   end
 
   def show
@@ -47,12 +47,25 @@ class ItemsController < ApplicationController
     redirect_to @item, notice: "Item #{message}."
   end
 
+  def upvote
+    @item = Item.find(params[:id])
+    @item.upvote_by current_user
+    redirect_to items_path
+  end
+
+  def downvote
+    @item = Item.find(params[:id])
+    @item.downvote_by current_user
+    redirect_to items_path
+  end
+
   private
   def set_item
-    @item = Item.includes(:votes).find(params[:id])
-    @votes = [@item].each_with_object({}) do |item, object|
-      object[item.id] = item.votes.map(&:user_id)
-    end
+    @item = Item.find(params[:id])
+    # @item = Item.includes(:votes).find(params[:id])
+    # @votes = [@item].each_with_object({}) do |item, object|
+    #   object[item.id] = item.votes.map(&:user_id)
+    # end
   end
 
   def set_user_item
@@ -67,3 +80,5 @@ class ItemsController < ApplicationController
     params.require(:item).permit(:title, :url, :content, :category_id)
   end
 end
+
+

@@ -14,17 +14,18 @@
         <td>
           <div>
             <h4><%= link_to item.title, item %></h4>
-            <!-- <ul>
-              <li>Up: <%= item.upvotes_count %> </li>
-              <li>Down: <%= item.downvotes_count %> </li>
-              <li>Score: <%= item.score %></li>
-            </ul>
-            <p><%= item.created_at %></p> -->
             <small>
-              <%= item.score %> points
-              by <%= render_link_to_user(item.user) %> <%= link_to "#{time_ago_in_words(item.created_at)} ago", item %>
+              <%= item.score %> points | 
+              posted by <%= render_link_to_user(item.user) %> | <%= link_to "#{time_ago_in_words(item.created_at)} ago", item %>
               | <%= link_to "#{item.comments_count} comments", item %>
             </small>
+            <br>
+             <a href="#">
+              <%= link_to "upvote",like_item_path(item), method: :put %>
+            </a>
+            <a href="#">
+              <%= link_to "downvote",dislike_item_path(item), method: :put %>
+            </a>
           </div>
         </td>
       </tr>
